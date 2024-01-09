@@ -42,9 +42,10 @@
   - [Singleton](#singleton)
 - [Practical Use Cases](#practical-use-cases)
 
-  ##Fundamentals
+ ## Fundamentals
 
-  ###Unity Shortcuts
+### Unity shortcuts
+  
   | Action                           | Key Binding                                             |
 | -------------------------------- | ------------------------------------------------------- |
 | View Tool                        |                                                        |

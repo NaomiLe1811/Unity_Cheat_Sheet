@@ -1,6 +1,7 @@
 # Unity_Cheat_Sheet
 ## Table of Contents
 - [Fundamentals](#fundamentals)
+  - [Unity Shortcuts](#unity-shortcuts)
   - [MonoBehaviour](#monobehaviour)
   - [Game Recycle](#gamerecycle)
   - [Serializing Variables](#serializing-variable)
@@ -43,8 +44,9 @@
 - [Practical Use Cases](#practical-use-cases)
 
  ## Fundamentals
-
-### Unity shortcuts
+ 
+[Unity Shortcuts]
+### Unity shortcuts 
   
   | Action                           | Key Binding                                             |
 | -------------------------------- | ------------------------------------------------------- |
@@ -70,9 +72,10 @@
 | SHIFT + SPACE                    |                                                        |
 | Windows: CTRL + D                | Mac: CMD + D Windows: CTRL + P Mac: CMD + P F              |
 |                                |                                                        |
-| **If you're using Visual Studio Code, here are some handy keyboard shortcuts.** |
+### Visual Studio Code
+
+  | Action                           | Key Binding                                             |
 | -------------------------------- | ------------------------------------------------------- |
-| **Action**                       | **Key Binding**                                         |
 | Command Palette                  | Windows: CTRL + SHIFT + P Mac: CMD + SHIFT + P            |
 | Quick File Open                   | Windows: CTRL + P Mac: CMD + P                           |
 | Toggle Sidebar                    | Windows: CTRL + B Mac: CMD + B                           |

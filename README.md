@@ -3,7 +3,7 @@
 - [Fundamentals](#fundamentals)
   - [Unity Shortcuts](#unity-shortcuts)
   - [MonoBehaviour](#monobehaviour)
-  - [Game Recycle](#gamerecycle)
+  - [Script Lifecycle](#script-liferecycle)
   - [Serializing Variables](#serializing-variable)
   - [Instantiating](#instantiating)
   - [Finding Game Objects](#finding-game-objects)
@@ -86,3 +86,8 @@
 | Trigger suggestion and parameter hints | Windows: Ctrl + Space, Ctrl + Shift + Space Mac: CMD + Space, CMD + Shift + Space |
 | Show References                   | Windows: Shift + F12 Mac: Shift + F12                    |
 | Global Find                       | Windows: CTRL + SHIFT + F Mac: CMD + SHIFT + F            |
+
+[Script Lifecycle]
+
+### Script Lifecycle
+

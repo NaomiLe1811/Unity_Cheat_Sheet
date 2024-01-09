@@ -47,28 +47,18 @@
   
   | Action                           | Key Binding                                             |
 | -------------------------------- | ------------------------------------------------------- |
-| View Tool                        |                                                        |
-| Move Tool                        |                                                        |
-| Rotate Tool                      |                                                        |
-| Scale Tool                       |                                                        |
-| Rect Tool                        |                                                        |
-| Transform Tool                   |                                                        |
-| New Game Object                  |                                                        |
-| New Child Game Object            | Toggle Window Size                                      |
-| Duplicate                        |                                                        |
-| Play/Pause                       |                                                        |
-| Focus Game Object                |                                                        |
-| Key Binding                      |                                                        |
-| Q                                |                                                        |
-| W                                |                                                        |
-| E                                |                                                        |
-| R                                |                                                        |
-| T                                |                                                        |
-| Y                                |                                                        |
-| Windows: CTRL + SHIFT + N        | Mac: CMD + SHIFT + N ALT + SHIFT + N                      |
-| SHIFT + SPACE                    |                                                        |
-| Windows: CTRL + D                | Mac: CMD + D Windows: CTRL + P Mac: CMD + P F              |
-|                                |                                                        |
+| View Tool                        |Q                                                        |
+| Move Tool                        |W                                                        |
+| Rotate Tool                      |E                                                        |
+| Scale Tool                       |R                                                        |
+| Rect Tool                        |T                                                        |
+| Transform Tool                   |Y                                                        |
+| New Game Object                  |Windows: CTRL + SHIFT + N <br> Mac: CMD + SHIFT + N      |
+| New Child Game Object            |Toggle Window Size                                       |
+| Duplicate                        |Windows: CTRL + D <br> Mac: CMD +D                       |
+| Play/Pause                       |Windows: CTRL + P <br> Mac: CMD + P                      |
+| Focus Game Object                |F                                                        |
+
 ### Visual Studio Code
 
   | Action                           | Key Binding                                             |

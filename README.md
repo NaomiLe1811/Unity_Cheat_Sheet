@@ -3,7 +3,7 @@
 - [Fundamentals](#fundamentals)
   - [Unity Shortcuts](#unity-shortcuts)
   - [MonoBehaviour](#monobehaviour)
-  - [Serializing Variables](#serializing-variable)
+  - [Serializing Variables](#serializing-variables)
   - [Instantiating](#instantiating)
   - [Finding Game Objects](#finding-game-objects)
   - [Destroying Games Objects](#destroying-game-objects)
@@ -132,3 +132,18 @@ New game objects can be inserted into the scene programmatically by calling the 
 - The Game Object
 - *(Optional)* Global Position
 - *(Optional)* Rotation
+```csharp
+Instantiate(someGameObject);
+Instantiate(someGameObject, new Vector3(0, 0, 10));
+Instantiate(someGameObject, new Vector3(0, 0, 10), Quaternion.identity);
+```
+### Destroying Game Objects
+Game objects can be destroyed by calling the Destroy() function:
+```csharp
+Destroy(gameObject);
+```
+
+#
+
+
+  

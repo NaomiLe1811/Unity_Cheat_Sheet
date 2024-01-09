@@ -40,6 +40,7 @@
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton)
 - [Practical Use Cases](#practical-use-cases)
+- [Refernces](#refernces)
 
  ## Fundamentals
 
@@ -602,3 +603,6 @@ public class AnotherClass: MonoBehaviour {
     }
 }
 ```
+### References
+LUIS RAMIREZ JR. (Unity Game Development Cheat Sheet)
+Ozan Kaşıkçı (Unity Cheat Sheet)

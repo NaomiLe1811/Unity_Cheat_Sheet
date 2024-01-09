@@ -8,7 +8,7 @@
   - [Finding Game Objects](#finding-game-objects)
   - [Destroying Games Objects](#destroying-game-objects)
   - [Components](#components)
-  - [Constant](#constant)
+  - [Constants](#constants)
   - [Vectors](#vectors)
   - [Transform](#transform)
   - [Quaternion](#quaternion)
@@ -137,13 +137,148 @@ Instantiate(someGameObject);
 Instantiate(someGameObject, new Vector3(0, 0, 10));
 Instantiate(someGameObject, new Vector3(0, 0, 10), Quaternion.identity);
 ```
+### Finding Game Objects
+The GameObject class has a few methods for finding game objects within the hierarchy.
+-	Find() - Searches for a game object based on its name.
+-	FindGameObjectsWithTag() - Finds multiple game objects that are stored in an array and returned. Uses a game object's tag to find them.
+-	FindWithTag() - Finds a game object based on its tag.
+```csharp
+GameObject myObj = GameObject.Find("NAME IN HIERARCHY");
+GameObject myObj = GameObject.FindGameObjectsWithTag("TAG");
+GameObject myObj = GameObject.FindWithTag("TAG");
+```
+
 ### Destroying Game Objects
 Game objects can be destroyed by calling the Destroy() function:
 ```csharp
 Destroy(gameObject);
 ```
+### Components
+Game objects don't do much on their own. We need to add components for specific functions. If you're using custom components and need to choose others, Unity provides ways to grab them. The first method is using the GetComponent() function, typically by specifying the component class name.
+```csharp
+AudioSource audioSource = GetComponent<AudioSource>();
+```
+Alternatively, you can use the typeof keyword and assert the value like so:
+```csharp
+AudioSource audioSource = GetComponent(typeof(AudioSource)) as AudioSource;
+```
+Lastly, you can pass in the name of the component as a string like so:
+```csharp
+AudioSource audioSource = GetComponent("AudioSource") as AudioSource;
+```
 
-#
+### Constants
 
+In Unity, you can use constants to define values that remain the same throughout your script. Here's how you can use constants in Unity:
 
-  
+1. Declare a Constant:
+Use the const keyword to declare a constant. Constants must be initialized with a value at the time of declaration and cannot be changed afterward. Here's an example:
+```csharp
+public class ExampleScript : MonoBehaviour
+{
+    // Define a constant for gravity
+    private const float Gravity = 9.8f;
+
+    void Start()
+    {
+        // Use the constant in your code
+        float fallSpeed = Gravity * Time.deltaTime;
+    }
+}
+```
+2. Benefits of Constants:
+Constants are helpful for defining values that are used in multiple places within your script and should not be modified during runtime. They make your code more readable and maintainable.
+
+3. Usage in Unity:
+You can use constants in various Unity scripts, such as MonoBehaviour scripts attached to GameObjects or utility scripts. Constants are often used for values like default speeds, fixed dimensions, or other unchanging parameters.
+
+4. Scope of Constants:
+Constants have a scope limited to the class or method in which they are declared. If you need constants accessible from multiple scripts, consider using a public static class.
+
+Here's a simple example:
+```csharp
+public static class GameConstants
+{
+    public const int MaxScore = 100;
+}
+
+public class ScoreManager : MonoBehaviour
+{
+    void Update()
+    {
+        // Access the constant from another script
+        int currentScore = CalculateScore();
+        if (currentScore >= GameConstants.MaxScore)
+        {
+            Debug.Log("You reached the maximum score!");
+        }
+    }
+
+    int CalculateScore()
+    {
+        // Your score calculation logic here
+        return 50;
+    }
+}
+```
+### Vectors
+Vectors determine game object positions and aid in distance and movement calculations. Unity has two vector classes: Vector2 for 2D games with coordinates (x, y), and Vector3 for 3D games with coordinates (x, y, z). In these classes, X represents Left/Right, Y denotes Up/Down, and Z indicates Forward/Back. Unity provides constants accessible from the relevant vector class.
+#### Vector 3
+```csharp
+Vector3 V = new Vector3(0f; 0f; 0f);
+```
+```csharp
+Vector3.right /* (1, 0, 0)  */
+Vector3.left /* (-1, 0, 0)  */
+Vector3.up /* (0, 1, 0)  */
+Vector3.down /* (0, -1, 0)  */
+Vector3.forward /* (0, 0, 1)  */
+Vector3.back /* (0, 0, -1) */
+Vector3.zero /* (0, 0, 0)  */
+Vector3.one /* (1, 1, 1)  */
+```
+#### Vector 2
+
+```csharp
+Vector2.right /* (1, 0)  */
+Vector2.left  /* (-1, 0) */
+Vector2.up    /* (0, 1)  */
+Vector2.down  /* (0, -1) */
+Vector2.zero  /* (0, 0)  */
+Vector2.one   /* (1, 1)  */
+```
+If you're just interested the direction of a specific vector, you can access its normalized property like so:
+```csharp
+myVector.normalized
+```
+The distance between two vectors can be calculated with the Vector3.Distance() method, which returns a float :
+```csharp
+float distance = Vector3.Distance(vectorOne, vectorTwo);
+```
+### Quaternion
+Quaternions handle game object rotation. You can check or change the object's rotation using transform.rotation. Unity's Quaternion.LookRotation() function creates a rotation based on a target position.
+```csharp
+Quaternion.LookRotation(gameObjectPosition);
+```
+A rotation 30 degrees around the y-axis
+
+```csharp
+Quaternion rotation = Quaternion.Euler(0, 30, 0);
+```
+### Euler Angles
+Euler angles are "degree angles" like 90, 180, 45, 30 degrees. Quaternions differ from Euler angles in that they represent a point on a Unit Sphere (the radius is 1 unit).
+
+Create a quaternion that represents 30 degrees about X, 10 degrees about Y
+```csharp
+Quaternion rotation = Quaternion.Euler(30, 10, 0);
+```
+Using a Vector
+```csharp
+Vector3 EulerRotation = new Vector3(30, 10, 0);
+Quaternion rotation = Quaternion.Euler(EulerRotation);
+```
+Convert a transform's Quaternion angles to Euler angles
+```csharp
+Quaternion quaternionAngles = transform.rotation;
+Vector3 eulerAngles = quaternionAngles.eulerAngles;
+```

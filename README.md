@@ -3,6 +3,7 @@
 - [Fundamentals](#fundamentals)
   - [Unity Shortcuts](#unity-shortcuts)
   - [MonoBehaviour](#monobehaviour)
+  - [Physics Events](#physics-events)
   - [Serializing Variables](#serializing-variables)
   - [Instantiating](#instantiating)
   - [Finding Game Objects](#finding-game-objects)
@@ -96,6 +97,65 @@ OnDestroy(): Triggered when the game object is destroyed.
 ```
 
 There's a lifecycle function called `FixedUpdate`, which is called a fixed number of times per second. You can configure the frequency in the Edit ▸ Project Settings ▸ Time ▸ Fixed Timestep.
+
+### Physics Events
+If you add a collider component to a game object, you can detect collision events from your components by defining a specific set of methods. The following methods are only called when you have a Collider or Rigid Body component on both game objects.
+- OnCollisionEnter - This function is called once when another object has collided with the current game object.
+- OnCollisionStay - This function is called on every frame when another object has collided with the current game object.
+- OnCollisionExit - This function is called once when an object exits the collision zone of the current object.
+```csharp
+private void OnCollisionEnter(Collision hit) {
+  Debug.Log($"{gameObject.name} hits {hit.gameObject.name}");
+}
+private void OnCollisionStay(Collision hit) {
+  Debug.Log($"{gameObject.name} is hitting {hit.gameObject.name}");
+}
+private void OnCollisionExit(Collision hit) {
+  Debug.Log($"{gameObject.name} stopped hitting {hit.gameObject.name}");
+}
+```
+The following functions are only called when the On Trigger option is turned on from the respective collider component.
+- OnTriggerEnter - This function is called when another object has collided with the current game object.
+- OnTriggerStay - This function is called on every frame when another object has collided with the current game object.
+- OnTriggerExit - This function is called once when an object exits the collision zone of the current object.
+```csharp
+private void OnTriggerEnter(Collider hit) {
+  Debug.Log($"{gameObject.name} hits {hit.gameObject.name}");
+}
+private void OnTriggerStay(Collider hit) {
+  Debug.Log($"{gameObject.name} is hitting {hit.gameObject.name}");
+}
+private void OnTriggerExit(Collider hit) {
+  Debug.Log($"{gameObject.name} stopped hitting {hit.gameObject.name}");
+}
+```
+Lastly, there are counterpart functions for 2D colliders. The functions share the same name as the 3D functions, but have the word 2D appended at the end. The same goes for the parameter's type. It's Collision2D instead of Collision .
+- OnCollisionEnter2D
+- OnCollisionStay2D
+- OnCollisionExit2D
+- OnTriggerEnter2D
+- OnTriggerStay2D
+- OnTriggerExit2D
+```csharp
+private void OnCollisionEnter2D(Collision2D hit) {
+  Debug.Log($"{gameObject.name} hits {hit.gameObject.name}");
+}
+private void OnCollisionStay2D(Collision2D hit) {
+  Debug.Log($"{gameObject.name} is hitting {hit.gameObject.name}");
+}
+private void OnCollisionExit2D(Collision2D hit) {
+  Debug.Log($"{gameObject.name} stopped hitting {hit.gameObject.name}");
+}
+private void OnTriggerEnter2D(Collision2D hit) {
+  Debug.Log($"{gameObject.name} hits {hit.gameObject.name}");
+}
+private void OnTriggerStay2D(Collision2D hit) {
+  Debug.Log($"{gameObject.name} is hitting {hit.gameObject.name}");
+}
+private void OnTriggerExit2D(Collision2D hit) {
+  Debug.Log($"{gameObject.name} stopped hitting {hit.gameObject.name}");
+}
+```
 
 ### Serializing Variables
 Unity can serialize variables, converting data into a format editable from the Unity editor. Serialization depends on attributes or access modifiers applied to the variable.

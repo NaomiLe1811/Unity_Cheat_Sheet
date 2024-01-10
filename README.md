@@ -32,7 +32,6 @@
   - [Mouse](#mouse)
   - [Touch](#touch)
 - [UI](#ui)
-  - [Keep Screen's Ratio](#keep-screens-ratio)
   - [Button](#button)
   - [Slider](#slider)
 - [Audio](#audio)
@@ -40,6 +39,7 @@
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton)
 - [Practical Use Cases](#practical-use-cases)
+  - [Keep Screen's Ratio](#keep-screens-ratio)
 - [Refernces](#refernces)
 
  ## Fundamentals
@@ -479,40 +479,7 @@ if (Input.touchCount > 0) {
 ```
 
 ## UI
-### Keep Screen's Ratio
-```csharp
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class ScaleBackground : MonoBehaviour
-{
-    private SpriteRenderer background;
-    private Camera cam;
-
-    void Start()
-    {
-        background = GetComponent<SpriteRenderer>();
-        cam = Camera.main;
-
-        // Get the size of the camera
-        float cameraHeight = 2f * cam.orthographicSize;
-        float cameraWidth = cameraHeight * cam.aspect;
-
-        // Get the size of the current background
-        float bgHeight = background.sprite.bounds.size.y;
-        float bgWidth = background.sprite.bounds.size.x;
-
-        // Calculate the scale ratio
-        float scaleX = cameraWidth / bgWidth;
-        float scaleY = cameraHeight / bgHeight;
-
-        // Apply the scale ratio to the background
-        transform.localScale = new Vector3(scaleX, scaleY, 1f);
-    }
-  }
-}
-```
 
 ```csharp
 // Button is used to handle user clicks and interactions.
@@ -603,6 +570,42 @@ public class AnotherClass: MonoBehaviour {
     }
 }
 ```
-### References
+### Practical Use Cases
+### Keep Screen's Ratio
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ScaleBackground : MonoBehaviour
+{
+    private SpriteRenderer background;
+    private Camera cam;
+
+    void Start()
+    {
+        background = GetComponent<SpriteRenderer>();
+        cam = Camera.main;
+
+        // Get the size of the camera
+        float cameraHeight = 2f * cam.orthographicSize;
+        float cameraWidth = cameraHeight * cam.aspect;
+
+        // Get the size of the current background
+        float bgHeight = background.sprite.bounds.size.y;
+        float bgWidth = background.sprite.bounds.size.x;
+
+        // Calculate the scale ratio
+        float scaleX = cameraWidth / bgWidth;
+        float scaleY = cameraHeight / bgHeight;
+
+        // Apply the scale ratio to the background
+        transform.localScale = new Vector3(scaleX, scaleY, 1f);
+    }
+  }
+}
+```
+
+### References 
 LUIS RAMIREZ JR. (Unity Game Development Cheat Sheet)
 Ozan Kaşıkçı (Unity Cheat Sheet)

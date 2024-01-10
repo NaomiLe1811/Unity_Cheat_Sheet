@@ -608,4 +608,5 @@ public class ScaleBackground : MonoBehaviour
 
 ### References 
 LUIS RAMIREZ JR. (Unity Game Development Cheat Sheet)
+
 Ozan Kaşıkçı (Unity Cheat Sheet)

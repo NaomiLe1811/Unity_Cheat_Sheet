@@ -21,7 +21,7 @@
     - [Vector3.SmoothDamp()](#vector3smoothdamp)
   - [Move 3D Object](#move-3D-object)
     - [Transform.Position()](#transformtposition)
-    - [Transform.Translate()](#transformtranslate)
+    - [Transform.Translate() ](#transformtranslate )
     - [Rigidbody.Velocity()](#rigidbodyvelocity)
     - [Rigidbody.MovePosition()](#rigidbodymoveposition)
     - [Rigidbody.AddForce()](#rigidbodyaddforce)

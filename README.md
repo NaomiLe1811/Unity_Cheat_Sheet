@@ -52,7 +52,7 @@
   - [Singleton](#singleton)
 - [Practical Use Cases](#practical-use-cases)
   - [Keep Screen's Ratio](#keep-screens-ratio)
-- [References](#refernces)
+- [References](#references)
 
  ## Fundamentals
 

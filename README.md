@@ -414,12 +414,57 @@ Vector3 newPosition = transform.position + new Vector3(0f, yOffset, 0f);
 transform.position = newPosition;
 ```
 #### Transform.Translate()(3D)
+You can use the Translate method of the Transform component to move an object along its local axes.
 ```csharp
 transform.Translate(0f, yOffset, 0f);
 ```
-
-
-
+#### Rigidbody.Velocity()
+ If your object has a Rigidbody component attached and you want to move it under physics simulation, you can manipulate its velocity property.
+```csharp
+Rigidbody rb = GetComponent<Rigidbody>();
+rb.velocity = new Vector3(rb.velocity.x, desiredYVelocity, rb.velocity.z);
+```
+#### Rigidbody.MovePosition()
+Similar to directly setting the position property, but designed for objects under physics simulation. This is more suitable if you want to move the object with physics interactions.
+```csharp
+Rigidbody rb = GetComponent<Rigidbody>();
+Vector3 newPosition = rb.position + new Vector3(0f, yOffset, 0f);
+rb.MovePosition(newPosition);
+```
+#### Rigidbody.AddForce()
+ The ForceMode.Force parameter indicates that the force should be applied continuously over time, as opposed to ForceMode.Impulse, which applies an instantaneous force.
+ ```csharp
+Rigidbody rb = GetComponent<Rigidbody>();
+Vector3 force = new Vector3(0f, desiredYForce, 0f);
+rb.AddForce(force, ForceMode.Force);
+```
+#### CharacterController.Move()
+CharacterController is a component in Unity used for controlling character objects. You can use the Move method to move the object along a specified movement vector.
+ ```csharp
+characterController.Move(moveDirection * speed * Time.deltaTime);
+```
+#### NavMeshAgent.Move()
+NavMeshAgent is a component that allows objects to move on a pre-defined NavMesh surface. You can use the Move method to move the object along a specified movement vector.
+ ```csharp
+navMeshAgent.Move(moveDirection * speed * Time.deltaTime);
+```
+#### CharacterJoint and Rigidbody.MoveRotation()
+If you want to move an object by rotating it, you can use CharacterJoint combined with the Rigidbody.MoveRotation method to apply rotation along the specified axis.
+```csharp
+characterJoint.targetRotation = Quaternion.Euler(rotation);
+rigidbody.MoveRotation(characterJoint.targetRotation);
+```
+#### SetPosition of Rigidbody2D
+For 2D objects, you can use the SetPosition method of Rigidbody2D to set the position of the object.
+```csharp
+rigidbody2D.SetPosition(newPosition);
+```
+#### Lerp or Slerp
+You can use the Vector3.Lerp, Vector3.Slerp, Quaternion.Lerp, or Quaternion.Slerp methods to create smooth movement between two positions or rotations.
+```csharp
+transform.position = Vector3.Lerp(startPosition, endPosition, t);
+transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
+```
 ### Rotate Object
 #### Transform.rotation
 ```csharp

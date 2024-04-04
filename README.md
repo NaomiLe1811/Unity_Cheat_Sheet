@@ -393,7 +393,7 @@ t += Time.deltaTime * speed;
 transform.position = Vector3.Lerp(transform.position, targetPosition, t);
 ```
 
-#### Transform.Translate()(3D)
+#### Vector3.SmoothDamp()
 ```csharp
 // Gradually changes a vector towards a desired goal over time.
 // The vector is smoothed by some spring-damper like function, which will never overshoot.

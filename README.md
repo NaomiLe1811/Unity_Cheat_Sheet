@@ -413,7 +413,10 @@ Directly manipulating the position property of the Transform component allows yo
 Vector3 newPosition = transform.position + new Vector3(0f, yOffset, 0f);
 transform.position = newPosition;
 ```
-#### Transform.Position()
+#### Transform.Translate()(3D)
+```csharp
+transform.Translate(0f, yOffset, 0f);
+```
 
 
 

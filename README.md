@@ -21,7 +21,7 @@
     - [Vector3.SmoothDamp()](#vector3smoothdamp)
   - [Move 3D Object](#move-3D-object)
     - [Transform.Position()](#transformtposition)
-    - [Transform.Translate() ](#transformtranslate )
+    - [Transform.Translate()(3D)](#transformtranslate(3D))
     - [Rigidbody.Velocity()](#rigidbodyvelocity)
     - [Rigidbody.MovePosition()](#rigidbodymoveposition)
     - [Rigidbody.AddForce()](#rigidbodyaddforce)
@@ -406,6 +406,16 @@ Vector3 targetPosition = target.TransformPoint(new Vector3(0, 5, -10));
 // Smoothly move the camera towards that target position
 transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 ```
+### Move Object
+#### Transform.Position()
+Directly manipulating the position property of the Transform component allows you to set the exact position of the object in world space.
+```csharp
+Vector3 newPosition = transform.position + new Vector3(0f, yOffset, 0f);
+transform.position = newPosition;
+```
+#### Transform.Position()
+
+
 
 ### Rotate Object
 #### Transform.rotation

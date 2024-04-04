@@ -20,7 +20,7 @@
     - [Vector3.Lerp()](#vector3lerp)
     - [Vector3.SmoothDamp()](#vector3smoothdamp)
   - [Move 3D Object](#move-3D-object)
-    - [Transform.Position()](#transformtposition)
+    - [Transform.Position()](#transformposition)
     - [Transform.Translate()(3D)](#transformtranslate(3D))
     - [Rigidbody.Velocity()](#rigidbodyvelocity)
     - [Rigidbody.MovePosition()](#rigidbodymoveposition)
